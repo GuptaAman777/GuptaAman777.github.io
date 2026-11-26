@@ -124,7 +124,7 @@
     },
     {
       repo: 'GuptaAman777.github.io',
-      title: 'GuptaAman777 Liquid Glass Portfolio',
+      title: 'GuptaAman777 Portfolio',
       category: 'web',
       featured: false,
       icon: 'fa-droplet',

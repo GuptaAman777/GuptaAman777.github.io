@@ -1,4 +1,4 @@
-# GuptaAman777 — Liquid Glass Portfolio
+# GuptaAman777 Portfolio
 
 Personal developer & solo scanlator portfolio for **@GuptaAman777**, built with an interactive **Liquid Glass** design system (`backdrop-filter`, specular refraction rims, dynamic ambient mesh, and Dark/Frost theme toggle).
 
