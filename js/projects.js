@@ -80,7 +80,9 @@
         'Standalone PyInstaller Windows executable with zero cloud dependency'
       ],
       repoUrl: 'https://github.com/GuptaAman777/psd-converter',
-      releaseUrl: 'https://github.com/GuptaAman777/psd-converter/releases'
+      releaseUrl: 'https://github.com/GuptaAman777/psd-converter/releases',
+      liveUrl: 'http://guptaaman777.me/psd-converter/',
+      trackRelease: true
     },
     {
       repo: 'mangajanai-illustrationjanai-ncnn-vulkan',
@@ -120,7 +122,8 @@
         'Instant Undo reverts an entire batch rename safely'
       ],
       repoUrl: 'https://github.com/GuptaAman777/Rename-Tool',
-      releaseUrl: 'https://github.com/GuptaAman777/Rename-Tool/releases'
+      releaseUrl: 'https://github.com/GuptaAman777/Rename-Tool/releases',
+      trackRelease: true
     },
     {
       repo: 'stitched',
@@ -140,7 +143,8 @@
         'Evolved into the high-capacity Stitcher module inside ImageTool'
       ],
       repoUrl: 'https://github.com/GuptaAman777/stitched',
-      releaseUrl: 'https://github.com/GuptaAman777/stitched/releases'
+      releaseUrl: 'https://github.com/GuptaAman777/stitched/releases',
+      trackRelease: true
     },
     {
       repo: 'GuptaAman777.github.io',
@@ -273,7 +277,12 @@
               <button class="glass-btn glass-btn-sm inspect-project-btn" data-repo="${esc(proj.repo)}">
                 Details
               </button>
-              <a href="${esc(proj.repoUrl)}" target="_blank" rel="noopener noreferrer" class="glass-btn glass-btn-sm" aria-label="Open ${esc(proj.title)} on GitHub">
+              ${proj.liveUrl ? `
+                <a href="${esc(proj.liveUrl)}" target="_blank" rel="noopener noreferrer" class="glass-btn glass-btn-sm" aria-label="Open ${esc(proj.title)} website" title="Live Site">
+                  <i class="fas fa-globe"></i>
+                </a>
+              ` : ''}
+              <a href="${esc(proj.repoUrl)}" target="_blank" rel="noopener noreferrer" class="glass-btn glass-btn-sm" aria-label="Open ${esc(proj.title)} on GitHub" title="GitHub">
                 <i class="fab fa-github"></i>
               </a>
             </div>
@@ -312,6 +321,11 @@
         <a href="${esc(proj.repoUrl)}" target="_blank" rel="noopener noreferrer" class="glass-btn glass-btn-primary glass-btn-sm">
           <i class="fab fa-github"></i> View Repository
         </a>
+        ${proj.liveUrl ? `
+          <a href="${esc(proj.liveUrl)}" target="_blank" rel="noopener noreferrer" class="glass-btn glass-btn-sm">
+            <i class="fas fa-globe"></i> Open Site
+          </a>
+        ` : ''}
         ${proj.releaseUrl ? `
           <a href="${esc(proj.releaseUrl)}" target="_blank" rel="noopener noreferrer" class="glass-btn glass-btn-sm">
             <i class="fas fa-arrow-up-right-from-square"></i> ${proj.category === 'web' ? 'Open Live' : 'Releases'}
@@ -327,23 +341,53 @@
     });
   }
 
+  function normalizeTag(tag) {
+    const clean = String(tag || '').trim();
+    if (!clean) return '';
+    return /^v/i.test(clean) ? clean : `v${clean}`;
+  }
+
   async function hydrateFromGitHub() {
     try {
-      const res = await fetch('https://api.github.com/users/GuptaAman777/repos?per_page=100');
-      if (!res.ok) return;
-      const repos = await res.json();
-      if (!Array.isArray(repos)) return;
+      const reposRes = await fetch('https://api.github.com/users/GuptaAman777/repos?per_page=100');
+      if (reposRes.ok) {
+        const repos = await reposRes.json();
+        if (Array.isArray(repos)) {
+          let publicCount = 0;
+          repos.forEach((r) => {
+            if (!r.private) publicCount++;
+            liveRepoMap[String(r.name).toLowerCase()] = r;
+          });
 
-      let publicCount = 0;
-      repos.forEach((r) => {
-        if (!r.private) publicCount++;
-        liveRepoMap[String(r.name).toLowerCase()] = r;
-      });
-
-      const statRepos = document.getElementById('statRepos');
-      if (statRepos && publicCount > 0) {
-        statRepos.textContent = String(publicCount);
+          const statRepos = document.getElementById('statRepos');
+          if (statRepos && publicCount > 0) {
+            statRepos.textContent = String(publicCount);
+          }
+        }
       }
+
+      // Dynamically fetch latest release versions
+      await Promise.all(
+        PROJECTS.filter((p) => p.trackRelease).map(async (proj) => {
+          try {
+            const relRes = await fetch(`https://api.github.com/repos/GuptaAman777/${proj.repo}/releases/latest`);
+            if (!relRes.ok) return;
+            const rel = await relRes.json();
+            const ver = normalizeTag(rel.tag_name);
+            if (!ver) return;
+
+            proj.version = `${ver} Latest`;
+            if (proj.repo === 'psd-converter') {
+              const statVer = document.getElementById('statImageToolVersion');
+              const btnLabel = document.getElementById('imageToolReleaseLabel');
+              if (statVer) statVer.textContent = ver;
+              if (btnLabel) btnLabel.textContent = `Releases (${ver})`;
+            }
+          } catch {
+            // Keep static fallback version
+          }
+        })
+      );
 
       const activeFilter = document.querySelector('#projectFilters .filter-pill.active')?.dataset.filter || 'all';
       renderProjects(activeFilter);
