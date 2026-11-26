@@ -67,20 +67,40 @@
       category: 'desktop',
       featured: true,
       icon: 'fa-wand-magic-sparkles',
-      version: 'v6.0 Latest',
+      version: 'v7.5 Latest',
       language: 'Python · PyQt6',
       langColor: '#3572A5',
       starsFallback: 5,
-      summary: 'Flagship offline desktop suite for PSD layer extraction, multi-page PDF rasterization, Vulkan NCNN AI super-resolution (Real-ESRGAN, Real-CUGAN, Waifu2x, SRMD), denoising, and safe canvas stitching.',
+      summary: 'Flagship offline desktop suite for PSD layer extraction, multi-page PDF rasterization, Vulkan NCNN AI super-resolution (Real-ESRGAN, Real-CUGAN, Waifu2x, SRMD, MangaJaNai), denoising, and safe canvas stitching.',
       tags: ['PyQt6', 'NCNN Vulkan', 'Real-ESRGAN', 'PSD/PDF', 'Multi-GPU'],
       highlights: [
-        '4 neural AI engines with VRAM tile-size scheduling & 8-pass TTA',
+        '4+ neural AI engines with VRAM tile-size scheduling & 8-pass TTA',
         'Extracts individual PSD layers & multi-page PDFs up to 600 DPI',
         'Before/After split-screen comparator & 6 live UI themes',
         'Standalone PyInstaller Windows executable with zero cloud dependency'
       ],
       repoUrl: 'https://github.com/GuptaAman777/psd-converter',
       releaseUrl: 'https://github.com/GuptaAman777/psd-converter/releases'
+    },
+    {
+      repo: 'mangajanai-illustrationjanai-ncnn-vulkan',
+      title: 'MangaJaNai & IllustrationJaNai NCNN',
+      category: 'desktop',
+      featured: false,
+      icon: 'fa-microchip',
+      version: '22 Models',
+      language: 'Python · NCNN',
+      langColor: '#3572A5',
+      starsFallback: 0,
+      summary: '22 MangaJaNai & IllustrationJaNai super-resolution models (ESRGAN 2x/4x, FDAT, SPAN) converted from FP16 ONNX to Vulkan-capable ncnn with zero CPU layer fallbacks.',
+      tags: ['Vulkan NCNN', 'MangaJaNai', 'ESRGAN', 'FDAT', 'SPAN'],
+      highlights: [
+        '44 direct .ncnn.param + .ncnn.bin model files in GitHub Releases (no zip needed)',
+        'Verified support_vulkan = True for every layer on FP16 and FP32 Vulkan GPUs',
+        'Built to plug directly into ImageTool (psd-converter) for manga & illustration scaling'
+      ],
+      repoUrl: 'https://github.com/GuptaAman777/mangajanai-illustrationjanai-ncnn-vulkan',
+      releaseUrl: 'https://github.com/GuptaAman777/mangajanai-illustrationjanai-ncnn-vulkan/releases'
     },
     {
       repo: 'Rename-Tool',
@@ -159,25 +179,6 @@
         'Lightweight zero-server asset storage'
       ],
       repoUrl: 'https://github.com/GuptaAman777/guptaaman777-imagehosting',
-      releaseUrl: ''
-    },
-    {
-      repo: 'kato-assist',
-      title: 'Kato Assist',
-      category: 'utility',
-      featured: false,
-      icon: 'fa-robot',
-      version: 'Upcoming',
-      language: 'In Progress',
-      langColor: '#a855f7',
-      starsFallback: 0,
-      summary: 'Upcoming assistant project currently initialized on GitHub and reserved for upcoming automation & workflow tooling.',
-      tags: ['Upcoming', 'Automation'],
-      highlights: [
-        'Repository initialized under @GuptaAman777',
-        'Stay tuned for initial commits and releases'
-      ],
-      repoUrl: 'https://github.com/GuptaAman777/kato-assist',
       releaseUrl: ''
     }
   ];
