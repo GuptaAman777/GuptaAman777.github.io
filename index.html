@@ -6,26 +6,30 @@
   <title>GuptaAman777 Portfolio</title>
 
   <link rel="icon" href="assets/pfp.png" type="image/png" sizes="64x64" />
+  <link rel="canonical" href="https://guptaaman777.me/" />
+  <meta name="theme-color" content="#060913" />
   <meta name="description" content="GuptaAman777 — Solo developer and scanlator building Vulkan-accelerated AI imaging suites (ImageTool / PSD Converter), batch utilities, and web experiences." />
 
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="GuptaAman777 Portfolio" />
-  <meta property="og:description" content="Explore ImageTool (PSD Converter &amp; Neural AI Upscaler), Rename-Tool, Image Stitcher, and solo scanlation tooling by GuptaAman777." />
+  <meta property="og:description" content="Explore ImageTool v7.5 (PSD Converter &amp; JaNai AI Upscaler), Rename-Tool, Image Stitcher, and solo scanlation tooling by GuptaAman777." />
   <meta property="og:image" content="https://guptaaman777.me/assets/pfp.png" />
   <meta property="og:url" content="https://guptaaman777.me/" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Fonts & Icons -->
+  <!-- Non-blocking Fonts (instant system-font first paint on mobile) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  </noscript>
 
-  <link rel="stylesheet" href="css/style.css?v=5" />
+  <link rel="stylesheet" href="css/style.css?v=8" />
 </head>
 <body>
-  <!-- Ambient Refractive Mesh -->
+  <!-- Ambient Refractive Mesh (desktop only; hidden on mobile via CSS) -->
   <div class="ambient-canvas" aria-hidden="true">
     <div class="ambient-orb orb-1"></div>
     <div class="ambient-orb orb-2"></div>
@@ -37,7 +41,7 @@
   <header class="site-header">
     <div class="nav-capsule">
       <a href="#top" class="brand-link">
-        <img src="assets/pfp.png" alt="GuptaAman777 Logo" />
+        <img src="assets/pfp.webp" alt="GuptaAman777 Logo" width="34" height="34" decoding="async" />
         <span>GuptaAman777</span>
       </a>
 
@@ -46,18 +50,20 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="https://guptaaman777.me/guptaaman777/">Personal</a></li>
+        <li><a href="https://guptaaman777.me/psd-converter/">ImageTool App</a></li>
       </ul>
 
       <div class="nav-actions">
         <button id="themeToggle" class="icon-pill-btn" title="Toggle Dark / Frost Glass" aria-label="Toggle theme">
-          <i class="fas fa-sun"></i>
+          <span data-gi="sun"></span>
         </button>
         <a href="https://github.com/GuptaAman777" target="_blank" rel="noopener noreferrer" class="glass-btn glass-btn-sm">
-          <i class="fab fa-github"></i>
+          <span data-gi="github"></span>
           <span>GitHub</span>
         </a>
-        <button id="menuToggle" class="icon-pill-btn menu-toggle" aria-label="Toggle navigation menu">
-          <i class="fas fa-bars"></i>
+        <button id="menuToggle" class="icon-pill-btn menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span data-gi="bars"></span>
         </button>
       </div>
     </div>
@@ -76,8 +82,8 @@
                   I do it Solo.
                 </span>
                 <span class="glass-pill">
-                  <i class="fas fa-microchip"></i>
-                  Solo Scanlator · Python · PyQt6 · Vulkan AI
+                  <span data-gi="microchip"></span>
+                  Solo Scanlator · Python · React 19 · Vulkan AI
                 </span>
               </div>
 
@@ -91,17 +97,17 @@
             </div>
 
             <div class="hero-cta-row">
-              <a href="#imagetool" class="glass-btn glass-btn-primary">
-                <i class="fas fa-wand-magic-sparkles"></i>
-                Explore ImageTool
+              <a href="https://guptaaman777.me/psd-converter/" class="glass-btn glass-btn-primary">
+                <span data-gi="wand-magic-sparkles"></span>
+                Open ImageTool v7.5
               </a>
               <a href="#projects" class="glass-btn">
-                <i class="fas fa-layer-group"></i>
+                <span data-gi="layer-group"></span>
                 All Projects
               </a>
-              <a href="#about" class="glass-btn">
-                <i class="fas fa-user"></i>
-                About Me
+              <a href="https://guptaaman777.me/guptaaman777/" class="glass-btn">
+                <span data-gi="user"></span>
+                Personal &amp; Links
               </a>
             </div>
           </div>
@@ -111,8 +117,11 @@
               <div class="profile-header">
                 <img
                   src="https://raw.githubusercontent.com/GuptaAman777/guptaaman777-imagehosting/main/team/member1.png"
-                  onerror="this.src='assets/pfp.png'"
+                  onerror="this.src='assets/pfp.webp'"
                   alt="GuptaAman777 Avatar"
+                  width="68"
+                  height="68"
+                  decoding="async"
                   class="profile-avatar"
                 />
                 <div>
@@ -124,22 +133,25 @@
                 Solo scanlator &amp; desktop software builder. Every step—cleaning, upscaling, stitching, typesetting, and tooling—handled solo, offline, and fast.
               </p>
               <div class="hero-cta-row">
+                <a href="https://guptaaman777.me/guptaaman777/" class="glass-btn glass-btn-sm">
+                  <span data-gi="link"></span> Bio &amp; Discord
+                </a>
                 <a href="https://github.com/GuptaAman777" target="_blank" rel="noopener noreferrer" class="glass-btn glass-btn-sm">
-                  <i class="fab fa-github"></i> Follow
+                  <span data-gi="github"></span> Follow
                 </a>
                 <a href="https://discord.gg/prvHAYFGV7" target="_blank" rel="noopener noreferrer" class="glass-btn glass-btn-sm">
-                  <i class="fab fa-discord"></i> Discord
+                  <span data-gi="discord"></span> Discord
                 </a>
               </div>
             </div>
 
             <div class="stat-grid reveal">
               <div class="glass-surface glass-card-hover stat-tile">
-                <div class="stat-value" id="statRepos">6+</div>
+                <div class="stat-value" id="statRepos">7+</div>
                 <div class="stat-label">Public Repositories</div>
               </div>
               <div class="glass-surface glass-card-hover stat-tile">
-                <div class="stat-value">4 AI</div>
+                <div class="stat-value">5 AI</div>
                 <div class="stat-label">Vulkan NCNN Engines</div>
               </div>
               <div class="glass-surface glass-card-hover stat-tile">
@@ -162,22 +174,22 @@
         <div class="section-head reveal">
           <div>
             <div class="section-eyebrow">
-              <i class="fas fa-sparkles"></i> Flagship Desktop Suite
+              <span data-gi="sparkles"></span> Flagship Desktop Suite
             </div>
-            <h2 class="section-title">ImageTool — PSD &amp; Image Converter Suite</h2>
+            <h2 class="section-title">ImageTool — PSD, Manga &amp; AI Image Suite</h2>
             <p class="section-subtitle">
-              Enterprise-grade Python &amp; PyQt6 desktop suite powered by native Vulkan NCNN neural inference, batch PSD layer extraction, multi-page PDF rasterization, denoising, and safe canvas stitching.
+              Offline hardware-accelerated desktop suite (FastAPI + React 19 + Edge WebView2) powered by 22 MangaJaNai NCNN packs, Vulkan AI upscaling &amp; denoising, PSD layer extraction, PDF rasterization, and safe canvas stitching.
             </p>
           </div>
           <div class="hero-cta-row">
-            <a href="http://guptaaman777.me/psd-converter/" target="_blank" rel="noopener noreferrer" class="glass-btn glass-btn-primary glass-btn-sm">
-              <i class="fas fa-globe"></i> Live Site
+            <a href="https://guptaaman777.me/psd-converter/" class="glass-btn glass-btn-primary glass-btn-sm">
+              <span data-gi="globe"></span> Interactive Showcase
             </a>
             <a href="https://github.com/GuptaAman777/psd-converter/releases" target="_blank" rel="noopener noreferrer" class="glass-btn glass-btn-sm">
-              <i class="fas fa-download"></i> <span id="imageToolReleaseLabel">Releases (v7.5)</span>
+              <span data-gi="download"></span> <span id="imageToolReleaseLabel">Releases (v7.5)</span>
             </a>
             <a href="https://github.com/GuptaAman777/psd-converter" target="_blank" rel="noopener noreferrer" class="glass-btn glass-btn-sm">
-              <i class="fab fa-github"></i> Source Repo
+              <span data-gi="github"></span> Source Repo
             </a>
           </div>
         </div>
@@ -186,41 +198,45 @@
           <div class="spotlight-top">
             <div>
               <div class="spotlight-badges">
-                <span class="tag-badge accent">Python 3.10–3.13</span>
-                <span class="tag-badge">PyQt6 GUI</span>
+                <span class="tag-badge accent">FastAPI + React 19</span>
+                <span class="tag-badge">Edge WebView2</span>
+                <span class="tag-badge">22 JaNai NCNN Packs</span>
                 <span class="tag-badge">Vulkan Multi-GPU + CPU</span>
                 <span class="tag-badge">MIT License</span>
               </div>
             </div>
 
-            <!-- Interactive ImageTool 6-Theme Preview Bar -->
-            <div class="palette-bar" role="group" aria-label="Preview ImageTool color palettes">
-              <span class="palette-label">App Theme Preview:</span>
-              <button class="palette-swatch active" data-palette="blue" style="background:#38bdf8;color:#38bdf8" title="Blue (Default)"></button>
-              <button class="palette-swatch" data-palette="crimson" style="background:#e53935;color:#e53935" title="Red (Crimson)"></button>
-              <button class="palette-swatch" data-palette="oled" style="background:#52525b;color:#a1a1aa" title="Black (OLED Dark)"></button>
-              <button class="palette-swatch" data-palette="purple" style="background:#9d4edd;color:#9d4edd" title="Purple (Cyberpunk)"></button>
-              <button class="palette-swatch" data-palette="emerald" style="background:#10b981;color:#10b981" title="Green (Emerald)"></button>
-              <button class="palette-swatch" data-palette="amber" style="background:#f59e0b;color:#f59e0b" title="Amber (Sunset)"></button>
+            <!-- Interactive 6-Theme Palette Switcher (synced across all 3 sites) -->
+            <div class="palette-bar" role="group" aria-label="Preview synchronized color palettes">
+              <span class="palette-label">Synced Theme:</span>
+              <button type="button" class="palette-swatch active" data-palette="blue" style="background:#38bdf8;color:#38bdf8" title="Blue (Default)" aria-label="Blue theme"></button>
+              <button type="button" class="palette-swatch" data-palette="crimson" style="background:#e53935;color:#e53935" title="Red (Crimson)" aria-label="Crimson theme"></button>
+              <button type="button" class="palette-swatch" data-palette="oled" style="background:#52525b;color:#a1a1aa" title="Black (OLED Dark)" aria-label="OLED Black theme"></button>
+              <button type="button" class="palette-swatch" data-palette="purple" style="background:#9d4edd;color:#9d4edd" title="Purple (Cyberpunk)" aria-label="Purple theme"></button>
+              <button type="button" class="palette-swatch" data-palette="emerald" style="background:#10b981;color:#10b981" title="Green (Emerald)" aria-label="Emerald theme"></button>
+              <button type="button" class="palette-swatch" data-palette="amber" style="background:#f59e0b;color:#f59e0b" title="Amber (Sunset)" aria-label="Amber theme"></button>
             </div>
           </div>
 
-          <!-- Module Switcher Tabs -->
+          <!-- Module Switcher Tabs (6 Focused Workspaces) -->
           <div class="module-tabs" id="imageToolTabs" role="tablist">
-            <button class="module-tab active" data-module="converter" role="tab" aria-selected="true">
-              <i class="fas fa-images"></i> Converter
+            <button type="button" class="module-tab active" data-module="janai" role="tab" aria-selected="true">
+              <span data-gi="brain"></span> JaNai AI
             </button>
-            <button class="module-tab" data-module="upscaler" role="tab" aria-selected="false">
-              <i class="fas fa-expand"></i> AI Upscaler
+            <button type="button" class="module-tab" data-module="converter" role="tab" aria-selected="false">
+              <span data-gi="images"></span> Converter &amp; PSD
             </button>
-            <button class="module-tab" data-module="denoiser" role="tab" aria-selected="false">
-              <i class="fas fa-broom"></i> Denoiser
+            <button type="button" class="module-tab" data-module="upscaler" role="tab" aria-selected="false">
+              <span data-gi="expand"></span> AI Upscaler
             </button>
-            <button class="module-tab" data-module="stitcher" role="tab" aria-selected="false">
-              <i class="fas fa-grip-vertical"></i> Stitcher
+            <button type="button" class="module-tab" data-module="denoiser" role="tab" aria-selected="false">
+              <span data-gi="broom"></span> Denoiser
             </button>
-            <button class="module-tab" data-module="diagnostics" role="tab" aria-selected="false">
-              <i class="fas fa-sliders"></i> Diagnostics &amp; UI
+            <button type="button" class="module-tab" data-module="stitcher" role="tab" aria-selected="false">
+              <span data-gi="grip-vertical"></span> Stitcher
+            </button>
+            <button type="button" class="module-tab" data-module="diagnostics" role="tab" aria-selected="false">
+              <span data-gi="sliders"></span> Compare &amp; Settings
             </button>
           </div>
 
@@ -236,31 +252,36 @@
               </h4>
               <div class="matrix-rows">
                 <div class="matrix-row">
-                  <span class="matrix-engine">Real-ESRGAN</span>
-                  <span class="matrix-use">Anime, digital art, photography &amp; pure PSNR</span>
+                  <span class="matrix-engine">JaNai NCNN</span>
+                  <span class="matrix-use">22 MangaJaNai &amp; IllustrationJaNai packs + Auto Detect</span>
                   <span class="matrix-scale">2x–4x</span>
+                </div>
+                <div class="matrix-row">
+                  <span class="matrix-engine">Upscayl / ESRGAN</span>
+                  <span class="matrix-use">Anime, digital art, photography + 11 community packs</span>
+                  <span class="matrix-scale">2x–8x</span>
                 </div>
                 <div class="matrix-row">
                   <span class="matrix-engine">Real-CUGAN</span>
-                  <span class="matrix-use">SE, Pro &amp; NoSE crisp line-art upscaling</span>
-                  <span class="matrix-scale">2x–4x</span>
+                  <span class="matrix-use">SE, Pro &amp; NoSE crisp line-art with SyncGap</span>
+                  <span class="matrix-scale">2x–8x</span>
                 </div>
                 <div class="matrix-row">
-                  <span class="matrix-engine">Waifu2x</span>
-                  <span class="matrix-use">CUnet &amp; Upconv 2D illustration &amp; photo models</span>
+                  <span class="matrix-engine">Waifu2x 2025</span>
+                  <span class="matrix-use">1x Grain Preserve denoise &amp; illustration scaling</span>
                   <span class="matrix-scale">1x–8x</span>
                 </div>
                 <div class="matrix-row">
                   <span class="matrix-engine">SRMD</span>
-                  <span class="matrix-use">Degraded scans, vintage photos &amp; 12-level denoise</span>
-                  <span class="matrix-scale">2x–4x</span>
+                  <span class="matrix-use">Degraded scans, vintage photos &amp; noise -1 to 10</span>
+                  <span class="matrix-scale">2x–8x</span>
                 </div>
               </div>
 
               <div class="format-strip" aria-label="Supported image formats">
                 <span class="format-chip">PSD (Layers)</span>
                 <span class="format-chip">PDF (72–600 DPI)</span>
-                <span class="format-chip">PNG</span>
+                <span class="format-chip">PNG (16-bit)</span>
                 <span class="format-chip">JPEG</span>
                 <span class="format-chip">WEBP</span>
                 <span class="format-chip">TIFF</span>
@@ -279,7 +300,7 @@
         <div class="section-head reveal">
           <div>
             <div class="section-eyebrow">
-              <i class="fas fa-code-branch"></i> Open-Source Ecosystem
+              <span data-gi="code-branch"></span> Open-Source Ecosystem
             </div>
             <h2 class="section-title">All Projects</h2>
             <p class="section-subtitle">
@@ -288,15 +309,15 @@
           </div>
 
           <div class="filter-bar" id="projectFilters">
-            <button class="filter-pill active" data-filter="all">All</button>
-            <button class="filter-pill" data-filter="desktop">Desktop &amp; AI</button>
-            <button class="filter-pill" data-filter="utility">Utilities</button>
-            <button class="filter-pill" data-filter="web">Web &amp; Media</button>
+            <button type="button" class="filter-pill active" data-filter="all">All</button>
+            <button type="button" class="filter-pill" data-filter="desktop">Desktop &amp; AI</button>
+            <button type="button" class="filter-pill" data-filter="utility">Utilities</button>
+            <button type="button" class="filter-pill" data-filter="web">Web &amp; Media</button>
           </div>
         </div>
 
         <div class="projects-grid" id="projectsGrid">
-          <!-- Dynamically populated & enriched with live GitHub stats via js/projects.js -->
+          <!-- Dynamically populated & enriched with cached GitHub stats via js/projects.js -->
         </div>
       </div>
     </section>
@@ -307,12 +328,17 @@
         <div class="section-head reveal">
           <div>
             <div class="section-eyebrow">
-              <i class="fas fa-user-astronaut"></i> Solo Craft
+              <span data-gi="user-astronaut"></span> Solo Craft
             </div>
             <h2 class="section-title">Solo Scanlator &amp; Toolmaker</h2>
             <p class="section-subtitle">
-              No crew, no cloud—just one solo builder automating every bottleneck from raw raws and PSDs to clean, high-resolution final output.
+              No crew, no cloud—just one solo builder automating every bottleneck from raw chapters and PSDs to clean, high-resolution final output.
             </p>
+          </div>
+          <div class="hero-cta-row">
+            <a href="https://guptaaman777.me/guptaaman777/" class="glass-btn glass-btn-sm">
+              <span data-gi="user"></span> Personal Bio &amp; Discord
+            </a>
           </div>
         </div>
 
@@ -322,49 +348,53 @@
               <div class="solo-header">
                 <img
                   src="https://raw.githubusercontent.com/GuptaAman777/guptaaman777-imagehosting/main/team/member1.png"
-                  onerror="this.src='assets/pfp.png'"
+                  onerror="this.src='assets/pfp.webp'"
                   alt="GuptaAman777"
+                  width="78"
+                  height="78"
+                  loading="lazy"
+                  decoding="async"
                   class="solo-avatar"
                 />
                 <div>
                   <span class="tag-badge accent" style="margin-bottom:6px;display:inline-block;">I do it Solo.</span>
                   <h3 style="font-size:1.35rem;font-weight:800;">GuptaAman777</h3>
-                  <div style="font-size:0.86rem;color:var(--text-muted);">Developer · Scanlator · Tooling Architect</div>
+                  <div style="font-size:0.86rem;color:var(--text-muted);">Editor (CL/RD+TS) · Developer · Tooling Architect</div>
                 </div>
               </div>
 
               <p style="color:var(--text-secondary);margin-top:18px;font-size:0.95rem;">
-                My software projects grew directly out of doing solo scanlation work—needing faster ways to extract layered Photoshop files, denoise and upscale low-res raws locally on GPU, stitch long vertical webtoon strips without hitting WebP dimension limits, and batch-rename hundreds of chapter pages cleanly.
+                My software projects grew directly out of doing solo scanlation work—needing faster ways to extract layered Photoshop files, denoise and upscale low-res raws locally on GPU with MangaJaNai, stitch long vertical webtoon strips without hitting WebP dimension limits, and batch-rename hundreds of chapter pages cleanly.
               </p>
             </div>
 
             <div style="display:flex;flex-wrap:wrap;gap:8px;">
-              <span class="tag-badge">Translation &amp; Localization</span>
-              <span class="tag-badge">Typesetting &amp; Cleaning</span>
-              <span class="tag-badge">Python &amp; PyQt6</span>
+              <span class="tag-badge">Cleaning &amp; Redrawing</span>
+              <span class="tag-badge">Typesetting</span>
+              <span class="tag-badge">Python &amp; FastAPI</span>
+              <span class="tag-badge">React 19</span>
               <span class="tag-badge">Vulkan NCNN Inference</span>
-              <span class="tag-badge">Web UI</span>
             </div>
           </div>
 
           <div class="solo-pillars reveal">
             <div class="glass-surface glass-card-hover pillar-card">
-              <i class="fas fa-layer-group"></i>
+              <span data-gi="layer-group"></span>
               <h4>PSD &amp; Layer Pipelines</h4>
-              <p>Batch composite or extract every individual Photoshop layer cleanly for editing and archiving.</p>
+              <p>Batch composite or extract visible Photoshop layers cleanly for editing and archiving.</p>
             </div>
             <div class="glass-surface glass-card-hover pillar-card">
-              <i class="fas fa-wand-magic-sparkles"></i>
+              <span data-gi="wand-magic-sparkles"></span>
               <h4>Neural Raw Restoration</h4>
-              <p>Local Vulkan Real-ESRGAN, Real-CUGAN, Waifu2x, and SRMD models to clean compression noise.</p>
+              <p>Local Vulkan MangaJaNai, Real-ESRGAN, Real-CUGAN, Waifu2x, and SRMD models to clean compression noise.</p>
             </div>
             <div class="glass-surface glass-card-hover pillar-card">
-              <i class="fas fa-grip-vertical"></i>
+              <span data-gi="grip-vertical"></span>
               <h4>Strip Stitching &amp; Chunking</h4>
               <p>Seamless vertical/horizontal stitching with automatic canvas chunking for WebP &amp; JPEG limits.</p>
             </div>
             <div class="glass-surface glass-card-hover pillar-card">
-              <i class="fas fa-bolt"></i>
+              <span data-gi="bolt"></span>
               <h4>Batch Automation</h4>
               <p>Regex smart-numbering renamers and multi-threaded desktop utilities with zero cloud lock-in.</p>
             </div>
@@ -379,11 +409,11 @@
         <div class="section-head reveal">
           <div>
             <div class="section-eyebrow">
-              <i class="fas fa-paper-plane"></i> Get In Touch
+              <span data-gi="paper-plane"></span> Get In Touch
             </div>
             <h2 class="section-title">Connect &amp; Support</h2>
             <p class="section-subtitle">
-              Have feedback on ImageTool, want to collaborate on a project, or report a bug? Reach out through any channel below.
+              Have feedback on ImageTool, want to collaborate on a project, or report a bug? Reach out through any channel below or visit my <a href="https://guptaaman777.me/guptaaman777/" style="color:var(--accent);text-decoration:underline;">Personal Page</a> for Discord handles.
             </p>
           </div>
         </div>
@@ -391,7 +421,7 @@
         <div class="contact-bento">
           <div class="contact-links-grid reveal">
             <a href="mailto:gamangupta777@gmail.com" class="glass-surface glass-card-hover contact-tile">
-              <i class="fas fa-envelope"></i>
+              <span data-gi="envelope"></span>
               <div>
                 <span>Email</span>
                 <strong>gamangupta777@gmail.com</strong>
@@ -399,7 +429,7 @@
             </a>
 
             <a href="https://github.com/GuptaAman777" target="_blank" rel="noopener noreferrer" class="glass-surface glass-card-hover contact-tile">
-              <i class="fab fa-github"></i>
+              <span data-gi="github"></span>
               <div>
                 <span>GitHub</span>
                 <strong>@GuptaAman777</strong>
@@ -407,7 +437,7 @@
             </a>
 
             <a href="https://discord.gg/prvHAYFGV7" target="_blank" rel="noopener noreferrer" class="glass-surface glass-card-hover contact-tile">
-              <i class="fab fa-discord"></i>
+              <span data-gi="discord"></span>
               <div>
                 <span>Discord</span>
                 <strong>Join Server</strong>
@@ -415,7 +445,7 @@
             </a>
 
             <a href="https://www.instagram.com/gupta_aman_777" target="_blank" rel="noopener noreferrer" class="glass-surface glass-card-hover contact-tile">
-              <i class="fab fa-instagram"></i>
+              <span data-gi="instagram"></span>
               <div>
                 <span>Instagram</span>
                 <strong>@Gupta_Aman_777</strong>
@@ -423,7 +453,7 @@
             </a>
 
             <a href="https://www.youtube.com/@guptaaman777" target="_blank" rel="noopener noreferrer" class="glass-surface glass-card-hover contact-tile">
-              <i class="fab fa-youtube"></i>
+              <span data-gi="youtube"></span>
               <div>
                 <span>YouTube</span>
                 <strong>@guptaaman777</strong>
@@ -431,7 +461,7 @@
             </a>
 
             <button type="button" id="copyBinanceBtn" class="glass-surface glass-card-hover contact-tile" data-copy="759439049" style="text-align:left;cursor:pointer;">
-              <i class="fas fa-coins"></i>
+              <span data-gi="coins"></span>
               <div>
                 <span>Binance ID (Click to Copy)</span>
                 <strong>759439049</strong>
@@ -455,7 +485,7 @@
                 <textarea id="message" name="message" rows="4" class="glass-input" placeholder="Project idea, bug report, or feedback..." required></textarea>
               </div>
               <button type="submit" class="glass-btn glass-btn-primary">
-                <i class="fas fa-paper-plane"></i> Send Message
+                <span data-gi="paper-plane"></span> Send Message
               </button>
             </form>
           </div>
@@ -468,11 +498,17 @@
     <div class="container">
       <div class="glass-surface footer-glass">
         <div class="brand-link">
-          <img src="assets/pfp.png" alt="Logo" />
+          <img src="assets/pfp.webp" alt="Logo" width="34" height="34" loading="lazy" decoding="async" />
           <span>GuptaAman777</span>
         </div>
+        <nav class="footer-links" aria-label="GuptaAman777 ecosystem">
+          <a href="https://guptaaman777.me/" aria-current="page">Portfolio</a>
+          <a href="https://guptaaman777.me/guptaaman777/">Personal</a>
+          <a href="https://guptaaman777.me/psd-converter/">ImageTool</a>
+          <a href="https://github.com/GuptaAman777" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </nav>
         <p class="footer-note">
-          &copy; <span id="currentYear"></span> GuptaAman777 — Built Solo with Liquid Glass UI.
+          &copy; <span id="currentYear"></span> GuptaAman777 — Built Solo.
         </p>
       </div>
     </div>
@@ -486,8 +522,8 @@
           <div id="glassModalEyebrow" class="section-eyebrow" style="margin-bottom: 4px;"></div>
           <h3 id="glassModalTitle" style="font-size: 1.45rem; font-weight: 800;"></h3>
         </div>
-        <button id="glassModalClose" class="icon-pill-btn" aria-label="Close modal">
-          <i class="fas fa-xmark"></i>
+        <button type="button" id="glassModalClose" class="icon-pill-btn" aria-label="Close modal">
+          <span data-gi="xmark"></span>
         </button>
       </div>
       <div id="glassModalBody"></div>
@@ -496,8 +532,8 @@
 
   <div class="glass-toast" id="glassToast" role="status" aria-live="polite"></div>
 
-  <script src="js/glass.js?v=4"></script>
-  <script src="js/projects.js?v=6"></script>
-  <script src="js/main.js?v=7"></script>
+  <script src="js/glass.js?v=8"></script>
+  <script src="js/projects.js?v=8"></script>
+  <script src="js/main.js?v=8"></script>
 </body>
 </html>
